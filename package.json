@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/uris77/marketo-rest-proxy/issues"
   },
-  "homepage": "https://github.com/uris77/marketo-rest-proxy"
+  "homepage": "https://github.com/uris77/marketo-rest-proxy",
+  "dependencies": {
+    "express": "^4.0.0-rc2"
+  }
 }
