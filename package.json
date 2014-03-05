@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/uris77/marketo-rest-proxy",
   "dependencies": {
-    "express": "^4.0.0-rc2"
+    "express": "^4.0.0-rc2",
+    "node-marketo-soap": "0.0.1"
   }
 }
