@@ -9,6 +9,9 @@ __Node__ v0.10.26
 # Installation
 > npm install
 
+# Starting the Server
+> node index
+
 # Endpoints
 ### /syncLead
 Allows a POST request that will be translated into a SOAP request. Format of request:
