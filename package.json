@@ -1,0 +1,22 @@
+{
+  "name": "marketo-rest-proxy",
+  "version": "0.0.1",
+  "description": "Server that Proxies Marketo's SOAP API through a pseudo-REST interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uris77/marketo-rest-proxy.git"
+  },
+  "keywords": [
+    "Marketo"
+  ],
+  "author": "Roberto Guerra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uris77/marketo-rest-proxy/issues"
+  },
+  "homepage": "https://github.com/uris77/marketo-rest-proxy"
+}
