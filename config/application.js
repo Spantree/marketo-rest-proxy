@@ -45,13 +45,5 @@ if(!App.config) {
 
 App.app.use(bodyParser());
 
-/*
-if(App.env !== 'test') {
-  App.app.use(express.logger());
-}
-*/
-
-//App.require('config/routes')(App.app);
-
 module.exports = App;
 
