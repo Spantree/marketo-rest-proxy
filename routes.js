@@ -93,7 +93,7 @@ module.exports = function(app) {
     }
   });
 
-  app.post('/describeMObject', function(req, res){
+  app.post('/describeLeadRecord', function(req, res){
     console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
     soap.createMarketoClient(marketoUrl, function(err, client){
       client.addSoapHeader(createHeader(req.body.header), mktowNamespace);

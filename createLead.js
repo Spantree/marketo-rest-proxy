@@ -12,7 +12,7 @@ module.exports = function(leadAttributes) {
     '<attrName>LastName</attrName><attrValue>' + leadAttributes.LastName + '</attrValue>' +
     '</attribute>' +
     '<attribute>' +
-    '<attrName>jobTitle</attrName><attrValue>' + leadAttributes.JobTitle + '</attrValue>' +
+    '<attrName>Title</attrName><attrValue>' + leadAttributes.JobTitle + '</attrValue>' +
     '</attribute>' +
     '<attribute>' +
     '<attrName>Company</attrName><attrValue>' + leadAttributes.Company + '</attrValue>' + 
