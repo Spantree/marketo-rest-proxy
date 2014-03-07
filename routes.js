@@ -71,7 +71,7 @@ module.exports = function(app) {
   });
 
   app.post('/syncLead', function(req, res){
-    console.log("Got Request from IP: " + req.ip + " for :" + req.body);
+    console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
       createHeader(req.body.header);
