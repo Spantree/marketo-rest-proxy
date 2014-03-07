@@ -79,7 +79,7 @@ module.exports = function(app) {
         client.addSoapHeader(createHeader(req.body.header), mktowNamespace);
         client.syncLead(createLead(req.body.leadRecord), function(error, result){
           if(error) {
-            console.error('ERROR: ', error);
+            console.error('ERROR: ', error.body);
             res.json({Error: error.body});
           } else{
             res.json(result.result);
