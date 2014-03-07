@@ -1,8 +1,9 @@
 'use strict';
-var _             = require('underscore');
-var soap          = require('node-marketo-soap');
-var createHeader  = require('./createHeader');
-var createLead    = require('./createLead');
+var _               = require('underscore');
+var soap            = require('node-marketo-soap');
+var createHeader    = require('./createHeader');
+var createLead      = require('./createLead');
+var describeMObject = require('./describeMObject');
 
 var mktowNamespace = 'http://www.marketo.com/mktows/';
 var marketoUrl = 'https://452-ZON-215.mktoapi.com/soap/mktows/2_3?WSDL';
@@ -90,6 +91,22 @@ module.exports = function(app) {
     } else {
       res.json(errors);
     }
+  });
+
+  app.post('/describeMObject', function(req, res){
+    console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
+    soap.createMarketoClient(marketoUrl, function(err, client){
+      client.addSoapHeader(createHeader(req.body.header), mktowNamespace);
+      client.describeMObject(describeMObject('LeadRecord'), function(error, result){
+        if(error){
+          console.log('ERROR: ', error.body);
+          console.log('Last Request: ', client.lastRequest);
+          res.json({Error: error.body});
+        } else{
+          res.json(result.result);
+        }
+      });
+    });
   });
 };
 
