@@ -71,14 +71,15 @@ module.exports = function(app) {
   });
 
   app.post('/syncLead', function(req, res){
+    console.log("Got Request from IP: " + req.ip + " for :" + req.body);
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
       createHeader(req.body.header);
       soap.createMarketoClient(marketoUrl, function(err, client) {
         client.addSoapHeader(createHeader(req.body.header), mktowNamespace);
         client.syncLead(createLead(req.body.leadRecord), function(error, result){
-          console.error('ERROR: ', error);
           if(error) {
+            console.error('ERROR: ', error);
             res.json({Error: error.body});
           } else{
             res.json(result.result);
