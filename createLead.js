@@ -16,7 +16,7 @@ module.exports = function(leadAttributes) {
     '</attribute>' +
     '<attribute>' +
     '<attrName>Company</attrName><attrValue>' + leadAttributes.Company + '</attrValue>' + 
-    '</attribute>'
+    '</attribute>' +
     '</leadAttributeList>' +
     '</leadRecord>' +
     '<returnLead>true</returnLead>' +
