@@ -80,6 +80,7 @@ module.exports = function(app) {
         client.syncLead(createLead(req.body.leadRecord), function(error, result){
           if(error) {
             console.error('ERROR: ', error.body);
+            console.log('Last Request: ', client.lastRequest);
             res.json({Error: error.body});
           } else{
             res.json(result.result);
