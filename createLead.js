@@ -41,9 +41,9 @@ function company(leadAttributes){
 
    //MainPhone
 function mainPhone(leadAttributes){
-    if(leadAttributes.MainPhone){
+    if(leadAttributes.Phone){
 	    return'<attribute>' +
-    		'<attrName>MainPhone</attrName><attrValue>' + leadAttributes.MainPhone + '</attrValue>' +
+    		'<attrName>Phone</attrName><attrValue>' + leadAttributes.MainPhone + '</attrValue>' +
     		'</attribute>' }
     else {return null;}
 };
