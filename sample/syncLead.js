@@ -23,7 +23,9 @@ request({
     leadRecord: {
       Email: 'titus@operus.net',
       FirstName: 'Titus',
-      LastName: 'Operus'
+      LastName: 'Operus',
+      LeadSource: 'test',
+      Country: 'test country'
     }
   }}, function (err, response, body) {
     if(err){
