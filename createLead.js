@@ -12,7 +12,7 @@ module.exports = function(leadAttributes) {
     '<attrName>LastName</attrName><attrValue>' + leadAttributes.LastName + '</attrValue>' +
     '</attribute>' +
     jobTitle(leadAttributes) + company(leadAttributes) +
-    mainPhone(leadAttributes) + leadStatus(leadAttributes) +
+    phone(leadAttributes) + leadStatus(leadAttributes) +
     leadScore(leadAttributes) + address(leadAttributes) +
     city(leadAttributes) + state(leadAttributes) +
     postCode(leadAttributes) + country(leadAttributes)+
@@ -40,10 +40,10 @@ function company(leadAttributes){
 }; 
 
    //MainPhone
-function mainPhone(leadAttributes){
+function phone(leadAttributes){
     if(leadAttributes.Phone){
 	    return'<attribute>' +
-    		'<attrName>Phone</attrName><attrValue>' + leadAttributes.MainPhone + '</attrValue>' +
+    		'<attrName>Phone</attrName><attrValue>' + leadAttributes.Phone + '</attrValue>' +
     		'</attribute>' }
     else {return null;}
 };
