@@ -76,7 +76,8 @@ module.exports = function(app) {
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
       createHeader(req.body.header);
-      marketoUrl = req.body.leadAttributes.MktowURL;
+      //console.log(req.body.leadRecord.MktowURL);
+      var marketoUrl = req.body.leadRecord.MktowURL;
       soap.createMarketoClient(marketoUrl, function(err, client) {
         client.addSoapHeader(createHeader(req.body.header), mktowNamespace);
         client.syncLead(createLead(req.body.leadRecord), function(error, result){

@@ -25,7 +25,8 @@ request({
       FirstName: 'Titus',
       LastName: 'Operus',
       LeadSource: 'test',
-      Country: 'test country'
+      Country: 'test country',
+      MktowURL: 'https://452-ZON-215.mktoapi.com/soap/mktows/2_3?WSDL'
     }
   }}, function (err, response, body) {
     if(err){
