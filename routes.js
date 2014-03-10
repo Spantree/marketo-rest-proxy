@@ -6,7 +6,6 @@ var createLead      = require('./createLead');
 var describeMObject = require('./describeMObject');
 
 var mktowNamespace = 'http://www.marketo.com/mktows/';
-var marketoUrl = 'https://452-ZON-215.mktoapi.com/soap/mktows/2_3?WSDL';
 
 function validateHeader(header){
   var errorMessage = {};
@@ -76,6 +75,8 @@ module.exports = function(app) {
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
       createHeader(req.body.header);
+      //console.log(req.body.leadRecord.MktowURL);
+      var marketoUrl = req.body.leadRecord.MktowURL;
       soap.createMarketoClient(marketoUrl, function(err, client) {
         client.addSoapHeader(createHeader(req.body.header), mktowNamespace);
         client.syncLead(createLead(req.body.leadRecord), function(error, result){
