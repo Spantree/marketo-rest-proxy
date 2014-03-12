@@ -16,7 +16,7 @@ module.exports = function(leadAttributes) {
     leadScore(leadAttributes) + address(leadAttributes) +
     city(leadAttributes) + state(leadAttributes) +
     postCode(leadAttributes) + country(leadAttributes)+
-    bestTime(leadAttributes) +
+    bestTime(leadAttributes) + leadNotes(leadAttributes) +
     '</leadAttributeList>' +
     '</leadRecord>' +
     '<returnLead>true</returnLead>' +
@@ -28,7 +28,7 @@ function jobTitle(leadAttributes){
  		return '<attribute>' +
     		'<attrName>Title</attrName><attrValue>' + leadAttributes.Title + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 
 function company(leadAttributes){
@@ -36,7 +36,7 @@ function company(leadAttributes){
     	return '<attribute>' +
     		'<attrName>Company</attrName><attrValue>' + leadAttributes.Company + '</attrValue>' + 
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 }; 
 
    //MainPhone
@@ -45,7 +45,7 @@ function phone(leadAttributes){
 	    return'<attribute>' +
     		'<attrName>Phone</attrName><attrValue>' + leadAttributes.Phone + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 
 	 //LeadStatus
@@ -54,7 +54,7 @@ function leadStatus(leadAttributes){
 		return '<attribute>' +
 		    '<attrName>LeadStatus</attrName><attrValue>' + leadAttributes.LeadStatus + '</attrValue>' +
 		    '</attribute>' }
-    else {return null;}
+    else {return '';}
 }; 
  //LeadScore
 function leadScore(leadAttributes){
@@ -62,7 +62,7 @@ function leadScore(leadAttributes){
 		return '<attribute>' +
     		'<attrName>LeadScore</attrName><attrValue>' + leadAttributes.LeadScore + '</attrValue>' +
     		'</attribute>'  }
-    else {return null;}
+    else {return '';}
 };
 //LeadSource
 function leadSource(leadAttributes){
@@ -70,7 +70,7 @@ function leadSource(leadAttributes){
 		return '<attribute>' +
     		'<attrName>LeadSource</attrName><attrValue>' + leadAttributes.LeadSource + '</attrValue>' +
     		'</attribute>'  }
-    else {return null;}
+    else {return '';}
 };
 //Address
 function address(leadAttributes){
@@ -78,7 +78,7 @@ function address(leadAttributes){
 		return '<attribute>' +
     		'<attrName>Address</attrName><attrValue>' + leadAttributes.Address + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 //City
 function city(leadAttributes){
@@ -86,7 +86,7 @@ function city(leadAttributes){
 		return '<attribute>' +
     		'<attrName>City</attrName><attrValue>' + leadAttributes.City + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 //State
 function state(leadAttributes){
@@ -94,7 +94,7 @@ function state(leadAttributes){
 		return '<attribute>' +
     		'<attrName>State</attrName><attrValue>' + leadAttributes.State + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 //PostalCode
 function postCode(leadAttributes){
@@ -102,7 +102,7 @@ function postCode(leadAttributes){
 		return '<attribute>' +
     		'<attrName>PostalCode</attrName><attrValue>' + leadAttributes.PostalCode + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
 };
 
 //Country
@@ -111,7 +111,7 @@ function country(leadAttributes){
 	    return '<attribute>' +
     		'<attrName>Country</attrName><attrValue>' + leadAttributes.Country + '</attrValue>' +
     		'</attribute>' }
-    else {return null;};
+    else {return '';}
 };
 
 //BestTimetoContact
@@ -120,5 +120,13 @@ function bestTime(leadAttributes){
 		return '<attribute>' +
     		'<attrName>BestTimetoContact</attrName><attrValue>' + leadAttributes.BestTimetoContact + '</attrValue>' +
     		'</attribute>' }
-    else {return null;}
+    else {return '';}
+};
+
+function leadNotes(leadAttributes){
+    if(leadAttributes.LeadNotes){
+        return '<attribute>' +
+            '<attrName>leadAdditionalNotes</attrName><attrValue>' + leadAttributes.LeadNotes + '</attrValue>' +
+            '</attribute>' }
+    else {return '';}
 };
