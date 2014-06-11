@@ -16,7 +16,8 @@ module.exports = function(leadAttributes) {
     leadScore(leadAttributes) + address(leadAttributes) +
     city(leadAttributes) + state(leadAttributes) +
     postCode(leadAttributes) + country(leadAttributes)+
-    bestTime(leadAttributes) + leadNotes(leadAttributes) +
+    bestTime(leadAttributes) + leadNotes(leadAttributes) + 
+    optIn(leadAttributes) +
     '</leadAttributeList>' +
     '</leadRecord>' +
     '<returnLead>true</returnLead>' +
@@ -129,4 +130,13 @@ function leadNotes(leadAttributes){
             '<attrName>leadAdditionalNotes</attrName><attrValue>' + leadAttributes.LeadNotes + '</attrValue>' +
             '</attribute>' }
     else {return '';}
+};
+
+function optIn(leadAttributes){
+    if(leadAttributes.OptIn){
+        return '<attribute>' +
+            '<attrName>optIn</attrName><attrValue>' + leadAttributes.LeadNotes + '</attrValue>' +
+            '</attribute>' }
+    else {return '';}
+    }
 };
