@@ -70,7 +70,7 @@ module.exports = function(app) {
     res.json({message: 'HELLO'});
   });
 
-  app.post('/syncLead', function(req, res){
+  app.put('/syncLead', function(req, res){
     console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
