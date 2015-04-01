@@ -70,7 +70,7 @@ module.exports = function(app) {
     res.json({message: 'HELLO'});
   });
 
-  app.post('/syncLead', function(req, res){
+  var syncLead = function(req, res){
     console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
     var errors = validate(req.body);
     if(_.isEmpty(errors)){
@@ -92,7 +92,12 @@ module.exports = function(app) {
     } else {
       res.json(errors);
     }
-  });
+  };
+
+  app.post('/syncLead', syncLead);
+  app.put('/syncLead', syncLead);
+  app.put('/', syncLead);
+  app.post('/', syncLead);
 
   app.post('/describeLeadRecord', function(req, res){
     console.log("Got Request from IP: " + req.ip + " for :" + JSON.stringify(req.body));
