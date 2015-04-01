@@ -23,7 +23,10 @@ request({
     leadRecord: {
       Email: 'titus@operus.net',
       FirstName: 'Titus',
-      LastName: 'Operus'
+      LastName: 'Operus',
+      LeadSource: 'test',
+      Country: 'test country',
+      MktowURL: 'https://452-ZON-215.mktoapi.com/soap/mktows/2_3?WSDL'
     }
   }}, function (err, response, body) {
     if(err){
